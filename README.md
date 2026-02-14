@@ -81,7 +81,7 @@
 
 <body>
 
-
+<!-- 🎵 Música -->
 <audio id="musica" loop>
     <source src="cancion.mp3" type="audio/mpeg">
 </audio>
@@ -106,6 +106,52 @@ function aceptar() {
     document.getElementById("mensaje").style.display = "block";
     document.getElementById("musica").play();
 
-    
+    // Oscurecer fondo románticamente
     document.body.style.background = "linear-gradient(to bottom right, #ff4d6d, #c9184a)";
+
+    // Explosión de corazones
+    for (let i = 0; i < 40; i++) {
+        let corazon = document.createElement("div");
+        corazon.innerHTML = "💖";
+        corazon.style.position = "absolute";
+        corazon.style.left = Math.random() * window.innerWidth + "px";
+        corazon.style.top = Math.random() * window.innerHeight + "px";
+        corazon.style.fontSize = Math.random() * 30 + 20 + "px";
+        corazon.style.animation = "flotar 4s linear forwards";
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+            corazon.remove();
+        }, 4000);
+    }
+}
+
+function mover() {
+    let botonNo = document.getElementById("no");
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 50);
+    botonNo.style.left = x + "px";
+    botonNo.style.top = y + "px";
+}
+
+// Corazones flotando constantemente
+setInterval(() => {
+    let corazon = document.createElement("div");
+    corazon.innerHTML = "💖";
+    corazon.classList.add("corazon");
+    corazon.style.left = Math.random() * window.innerWidth + "px";
+    corazon.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 6000);
+}, 600);
+
+</script>
+
+</body>
+</html>
+
+
 
