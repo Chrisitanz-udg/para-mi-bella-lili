@@ -82,8 +82,8 @@
 </div>
 
 <div class="mensaje" id="mensaje">
-    ¡Sabía que dirías que sí! 💘✨  
-    Te prometo un día lleno de amor y sonrisas.
+    ¡Te amooo bella espero alegrearte el día y llenarte de sonrísas, es increíble estar con alguien como tú mua mua :*! 💘✨  
+    
 </div>
 
 <script>
@@ -99,7 +99,7 @@
         botonNo.style.top = y + "px";
     }
 
-    // Crear corazones flotando
+ 
     setInterval(() => {
         let corazon = document.createElement("div");
         corazon.innerHTML = "💖";
