@@ -9,9 +9,11 @@
         margin: 0;
         padding: 0;
         background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
-        font-family: 'Arial', sans-serif;
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;
         text-align: center;
         overflow: hidden;
+        transition: background 1s ease;
     }
 
     h1 {
@@ -53,12 +55,17 @@
 
     .mensaje {
         margin-top: 40px;
-        font-size: 25px;
+        font-size: 28px;
         color: white;
         display: none;
+        animation: aparecer 1.5s ease forwards;
     }
 
-    /* Corazones flotando */
+    @keyframes aparecer {
+        from { opacity: 0; transform: scale(0.5); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
     .corazon {
         position: absolute;
         color: red;
@@ -74,6 +81,11 @@
 
 <body>
 
+
+<audio id="musica" loop>
+    <source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
 <h1>¿Quieres ser mi San Valentín bella? 💖</h1>
 
 <div class="botones">
@@ -82,38 +94,18 @@
 </div>
 
 <div class="mensaje" id="mensaje">
-    ¡Te amooo bella espero alegrearte el día y llenarte de sonrísas, es increíble estar con alguien como tú mua mua :*! 💘✨  
-    
+    ¡Te amooo bella! 💘  
+    Espero alegrarte el día y llenarte de sonrisas.  
+    Es increíble estar con alguien como tú ✨  
+    Gracias por existir 💖
 </div>
 
 <script>
-    function aceptar() {
-        document.getElementById("mensaje").style.display = "block";
-    }
 
-    function mover() {
-        let botonNo = document.getElementById("no");
-        let x = Math.random() * window.innerWidth;
-        let y = Math.random() * window.innerHeight;
-        botonNo.style.left = x + "px";
-        botonNo.style.top = y + "px";
-    }
+function aceptar() {
+    document.getElementById("mensaje").style.display = "block";
+    document.getElementById("musica").play();
 
- 
-    setInterval(() => {
-        let corazon = document.createElement("div");
-        corazon.innerHTML = "💖";
-        corazon.classList.add("corazon");
-        corazon.style.left = Math.random() * window.innerWidth + "px";
-        corazon.style.fontSize = Math.random() * 20 + 20 + "px";
-        document.body.appendChild(corazon);
-
-        setTimeout(() => {
-            corazon.remove();
-        }, 6000);
-    }, 500);
     
-</script>
+    document.body.style.background = "linear-gradient(to bottom right, #ff4d6d, #c9184a)";
 
-</body>
-</html>
