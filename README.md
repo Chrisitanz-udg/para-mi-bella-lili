@@ -112,6 +112,7 @@
             corazon.remove();
         }, 6000);
     }, 500);
+    
 </script>
 
 </body>
